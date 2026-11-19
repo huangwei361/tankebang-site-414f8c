@@ -183,6 +183,26 @@ footer p{margin:0;max-width:900px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 .img-fallback{background:linear-gradient(135deg,#2a241d,#141210)}
+/* SECTION: v2-addons */
+.band{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:26px}
+.band .p{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.band .p b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.band .p span{font-size:13px;color:var(--muted)}
+.redline{background:#241110;color:#fff}
+.redline .sec-head h2{color:#fff}
+.redline .sec-head p{color:rgba(255,255,255,.65)}
+.rl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.rl{background:rgba(255,255,255,.05);border:1px solid rgba(255,138,122,.28);border-radius:14px;padding:18px 20px}
+.rl h3{font-size:15.5px;color:#ffb0a3;margin:0 0 6px}
+.rl p{margin:0;font-size:13px;color:rgba(255,255,255,.72)}
+.train-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.train{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.train h3{font-size:17px;color:var(--ink);margin:10px 0 8px}
+.train p{margin:0;font-size:13.5px;color:var(--muted)}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.dim-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.formula{background:var(--ink);color:#fff;border-radius:14px;padding:20px 24px;margin-top:20px;font-size:clamp(15px,2.2vw,19px);text-align:center}
+.formula b{color:var(--gold2)}
 </style>
 </head>
 <body>
@@ -197,8 +217,10 @@ footer p{margin:0;max-width:900px}
     <button class="nav-toggle" id="navToggle" aria-label="打开菜单">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#categories">能做什么</a>
+      <a href="#redline">品类红线</a>
       <a href="#system">加盟体系</a>
       <a href="#steps">怎么开摊</a>
+      <a href="#training">训练营</a>
       <a href="#calc">收益测算</a>
       <a href="#pricing">加盟方案</a>
       <a href="#faq">常见问题</a>
@@ -250,20 +272,42 @@ footer p{margin:0;max-width:900px}
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">WHAT · 加盟后能做什么</span>
-      <h2>十大品类方案库，每个品类一套「照做手册」</h2>
+      <h2>全品类方案库，每个品类一套「照做手册」</h2>
       <p>每个品类都配齐：选品逻辑、设备清单、料包配方、操作SOP、定价毛利结构、选址画像、合规要点、营销日历。首发聚焦全年可售、设备通用的主力组合。</p>
     </div>
     <div class="cat-grid">
       <div class="cat reveal"><div class="cat-top"><h3>炸串 · 炸鸡</h3><span class="emo">🍢</span></div><p>主力爆品，出餐快、毛利高，料包统一供货，新手3天上手。</p><div class="cat-meta"><span class="tag">首发主力</span><span class="tag">投入2—5万</span><span class="tag">全年可售</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>烤肠 · 小串烧烤</h3><span class="emo">🌭</span></div><p>夜市标配，油烟净化设备达标，适配各类规范摊区。</p><div class="cat-meta"><span class="tag">首发主力</span><span class="tag">投入1—4万</span><span class="tag">夜市首选</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>饼类 · 煎饼手抓饼</h3><span class="emo">🥞</span></div><p>早夜市通吃，设备轻、一人可经营，现金流稳定。</p><div class="cat-meta"><span class="tag">首发主力</span><span class="tag">投入0.8—3万</span><span class="tag">1人可干</span></div></div>
-      <div class="cat reveal"><div class="cat-top"><h3>甜品 · 季节饮品</h3><span class="emo">🍧</span></div><p>冰粉、柠檬茶、冰淇淋，夏季引流利器，冬季按SOP切换热品。</p><div class="cat-meta"><span class="tag">季节搭配</span><span class="tag">投入0.8—3万</span><span class="tag">高毛利</span></div></div>
+      <div class="cat reveal"><div class="cat-top"><h3>甜品 · 季节饮品</h3><span class="emo">🍧</span></div><p>钵仔糕、冰豆花、烧仙草糖水、柠檬茶：投入低毛利高、新手友好，冬季按SOP切换热品。</p><div class="cat-meta"><span class="tag">季节搭配</span><span class="tag">投入0.8—3万</span><span class="tag">高毛利</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>粉面 · 凉拌</h3><span class="emo">🍜</span></div><p>凉面、凉皮、酸辣粉，轻投入快回款，冷食合规要点全程辅导。</p><div class="cat-meta"><span class="tag">轻投入</span><span class="tag">投入0.5—2万</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>卤味 · 冷锅串</h3><span class="emo">🍗</span></div><p>中央厨房料包直供，摊位只做陈列售卖，几乎零技术门槛。</p><div class="cat-meta"><span class="tag">供应链型</span><span class="tag">投入1—3万</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>早餐 · 包子豆浆</h3><span class="emo">🥟</span></div><p>早市时段经营（如6:00—9:00摊区），刚需复购，与夜市摊错峰互补。</p><div class="cat-meta"><span class="tag">早市场景</span><span class="tag">投入0.5—2万</span></div></div>
       <div class="cat reveal"><div class="cat-top"><h3>百货 · 文创玩具</h3><span class="emo">🧸</span></div><p>义乌快反选品，无食品合规负担，总部按周推送爆款清单。</p><div class="cat-meta"><span class="tag">最低门槛</span><span class="tag">投入0.3—1万</span></div></div>
+      <div class="cat reveal"><div class="cat-top"><h3>亲子体验 · DIY手作</h3><span class="emo">🎨</span></div><p>石膏娃娃涂色、手工蜡烛DIY，家长愿意为「打发孩子时间」付费，材料安全第一。</p><div class="cat-meta"><span class="tag">零库存</span><span class="tag">亲子场景</span><span class="tag">高毛利</span></div></div>
+      <div class="cat reveal"><div class="cat-top"><h3>服务体验 · 海娜妆造</h3><span class="emo">💅</span></div><p>海娜手绘留色7—14天、演唱会妆造编发线上预约沉淀私域、穿戴甲免费试贴引流，几乎零库存。</p><div class="cat-meta"><span class="tag">毛利率最高</span><span class="tag">技能变现</span></div></div>
+      <div class="cat reveal"><div class="cat-top"><h3>场景限定 · 大集音乐节</h3><span class="emo">🎪</span></div><p>农村大集实用低价、音乐节马拉松饮品应援、庙会花市提前1—2周备货，非生肖春联可跨年卖。</p><div class="cat-meta"><span class="tag">信息差</span><span class="tag">事件营销</span></div></div>
     </div>
     <p class="src-line">投入区间为市场常见量级的定性归纳，非本公司定价承诺；具体以所选套餐与属地摊区费用为准。</p>
+  </div>
+</section>
+
+<!-- SECTION: redline -->
+<section class="sec redline" id="redline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">RED LINE · 品类红线</span>
+      <h2>我们坚决不做的，写进合同附件</h2>
+      <p>赚钱先避坑。以下品类一律不入库、不授权——这是对你的本金负责，也是体系能长期活下去的前提。</p>
+    </div>
+    <div class="rl-grid">
+      <div class="rl reveal"><h3>⛔ 套圈返现金</h3><p>返现金触碰赌博法律红线，仅可赠送低价实物奖品；不合规玩法一律不授权。</p></div>
+      <div class="rl reveal"><h3>⛔ 充气城堡等高危设备</h3><p>已有多起儿童伤害事故，一次意外赔掉全部利润，坚决不做。</p></div>
+      <div class="rl reveal"><h3>⛔ 提拉米苏等生食蛋甜品</h3><p>生食蛋易变质、曾发生中毒事件，摊位温控难以保障，不入库。</p></div>
+      <div class="rl reveal"><h3>⛔ 非专业人士做咖啡</h3><p>成熟奶茶店竞争下难以突围，新手不建议进入红海。</p></div>
+      <div class="rl reveal"><h3>⛔ 鲜花摊</h3><p>损耗过高、卖不掉全亏；以干花摆件替代，可跨月继续售卖。</p></div>
+      <div class="rl reveal"><h3>⛔ 网红滤镜品类</h3><p>AI画像打印、热红酒、后备箱鸡尾酒听着好、线下难卖，不入库。</p></div>
+    </div>
   </div>
 </section>
 
@@ -309,6 +353,41 @@ footer p{margin:0;max-width:900px}
       <div class="step reveal"><h3>持续经营督导</h3><p>数据周报、月度巡店、季度新品、证照年检提醒，长期有人管。</p><span class="tag">长期</span></div>
     </div>
     <p class="src-line">「14天出摊」为标准流程示例周期，实际以属地备案办理进度与场地交付为准。</p>
+  </div>
+</section>
+
+<!-- SECTION: training -->
+<section class="sec" id="training">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">CAMP · 三天训练营</span>
+      <h2>零经验到考核出摊，三天学完全链路</h2>
+      <p>培训在官方直营点完成，考核通过才开业；课程随新品持续迭代，复训免费。</p>
+    </div>
+    <div class="train-grid">
+      <div class="train reveal"><span class="tag">DAY 1</span><h3>认知与调研</h3><p>摆摊的商业价值与收入天花板、五大商业能力（选品/销售/算账/服务/市场判断）、人群与打法适配、四周逛摊调研法与选品选址逻辑。</p></div>
+      <div class="train reveal"><span class="tag">DAY 2</span><h3>品类SOP实操</h3><p>选品—配方—备料—出餐—损耗全流程拆解，直营点实操并考核，对应每个品类的《照做手册》。</p></div>
+      <div class="train reveal"><span class="tag">DAY 3</span><h3>流量扩容</h3><p>抖音/小红书同城内容、私域沉淀、线上预约线下交付，衔接总部营销日历与同城投流模板。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: research -->
+<section class="sec" id="research" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">METHOD · 选址选品方法论</span>
+      <h2>总部带你做调研：不拍脑袋下注</h2>
+      <p>准备时间越长，失败概率越低。这套方法论已产品化为摊主系统模板，加盟商照着填、照着走。</p>
+    </div>
+    <div class="res-grid">
+      <div class="step reveal"><h3>第1周 · 全域扫街</h3><p>跑遍夜市、社区商圈、大学城，记录本地尚未被满足的品类信息差。</p></div>
+      <div class="step reveal"><h3>第2周 · 高峰蹲点</h3><p>筛2—3个意向点位，数人流与同类摊每小时出单量，以顾客身份买竞品、和摊主聊。</p></div>
+      <div class="step reveal"><h3>第4周 · 低价试摆</h3><p>试摆1—2天验证「停留—询问—成交」，连续一周无人询问即止损。</p></div>
+      <div class="step reveal"><h3>线上 · 四路搜索</h3><p>求助/吐槽/替代/交易四路搜索＋抖音AI挖本地爆品，优选对手5个以内的分散市场。</p></div>
+    </div>
+    <div class="dim-chips reveal"><span class="tag">选品四维打分：真实需求</span><span class="tag">利润空间</span><span class="tag">落地难度</span><span class="tag">复购潜力</span></div>
+    <div class="formula reveal">每日最低出单量 = <b>点位每日固定成本 ÷ 单份产品利润</b> —— 这就是你给自己的每日保本KPI</div>
   </div>
 </section>
 
@@ -385,6 +464,11 @@ footer p{margin:0;max-width:900px}
       <span class="kicker">PLANS · 加盟方案</span>
       <h2>三档套餐，按你的预算与目标选</h2>
       <p>以下为方案示例价，正式价格以信息披露文件与合同为准。</p>
+    </div>
+    <div class="band reveal">
+      <div class="p"><b>兼职副业 · 每天2—3小时</b><span>宝妈/上班族，不影响主业 → 轻摊包，设备轻、不压货</span></div>
+      <div class="p"><b>全职创业 · 每天8小时+</b><span>全身心深耕、做好吃苦预案 → 标准/旗舰包＋驻点督导</span></div>
+      <div class="p"><b>项目验证 · 试摆2—3天</b><span>为新品测市场 → 轻摊包短周期＋数据记录模板</span></div>
     </div>
     <div class="price-grid">
       <div class="price reveal">
@@ -496,7 +580,7 @@ footer p{margin:0;max-width:900px}
   <div class="wrap">
     <div class="fbrand">摊客邦 · 地摊加盟连锁服务（品牌名为演示占位，可替换）</div>
     <p>合规声明：本网站为加盟体系演示页面。商业特许经营须满足《商业特许经营管理条例》规定的企业主体、「两店一年」、信息披露与备案要求；正式招商前须完成商务主管部门备案。页面所列价格、周期、测算均为示例，不构成要约或收益承诺；投资有风险，经营需谨慎，实际收益受选址、季节、天气与个人经营投入影响，存在亏损可能。</p>
-    <p>数据来源：中国旅游研究院《2025中国夜间经济发展报告》、QuestMobile《2026夜经济洞察报告》、艾媒咨询《2026-2027年中国流动小吃摊消费趋势研究报告》及各地政府公开政策文件。页面图片为AI生成效果图，非实拍。</p>
+    <p>数据来源：中国旅游研究院《2025中国夜间经济发展报告》、QuestMobile《2026夜经济洞察报告》、艾媒咨询《2026-2027年中国流动小吃摊消费趋势研究报告》及各地政府公开政策文件。页面图片为AI生成效果图，非实拍。品类与培训方法论参考得到《摆摊副业入门全指南》课程框架。</p>
   </div>
 </footer>
 
