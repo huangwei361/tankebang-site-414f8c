@@ -227,6 +227,17 @@ footer p{margin:0;max-width:900px}
 .ask-item{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}
 .ask-item p{margin:0 0 4px;font-size:14px;color:var(--text)}
 .ask-item span{font-size:12px;color:var(--muted)}
+/* SECTION: warmth */
+.warm{background:linear-gradient(135deg,#f6e7c8,#faf7f2);border:1px solid #eed9ae;border-radius:18px;padding:26px 28px;margin-top:26px}
+.warm h3{font-size:17px;color:#8a6d3b;margin-bottom:8px}
+.warm p{margin:0;font-size:14.5px;color:#6b5a3e;line-height:1.9}
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241a08;font-weight:800;font-size:15px;padding:14px 24px;border-radius:999px;box-shadow:0 10px 30px rgba(201,151,63,.45);display:flex;align-items:center;gap:8px}
+.fab:hover{transform:translateY(-2px)}
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:59;background:rgba(20,18,16,.96);backdrop-filter:blur(10px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mbar a{flex:1;text-align:center;min-height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:15px;font-weight:700}
+.mbar .ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.mbar .gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241a08}
+@media (max-width:900px){.mbar{display:flex}.fab{bottom:80px}body{padding-bottom:72px}}
 </style>
 </head>
 <body>
@@ -259,7 +270,7 @@ footer p{margin:0;max-width:900px}
   <div class="hero-in">
     <span class="hero-badge">◆ 商业特许经营体系 · 官方直营样板 · 全程督导</span>
     <h1>把地摊生意，做成<em>照着做就能开摊</em>的连锁体系</h1>
-    <p class="lead">品牌授权、合规选址、标准餐车、料包供货、培训督导、数字化工具——六大模块一次给齐。你不需要懂餐饮、不需要懂政策，按体系执行，从签约到出摊最快 14 天。</p>
+    <p class="lead">第一次摆摊没关系，我们陪你把第一摊摆稳。品牌授权、合规选址、标准餐车、料包供货、培训督导、数字化工具——六大模块一次给齐，从签约到出摊最快 14 天，每一步都有人带。</p>
     <div class="hero-cta">
       <a class="btn btn-gold" href="#contact">免费获取加盟方案</a>
       <a class="btn btn-ghost" href="#calc">先算一笔账</a>
@@ -498,6 +509,10 @@ footer p{margin:0;max-width:900px}
         <p class="calc-warn">*固定支出含摊位费、水电耗材约800元/月、营销约500元/月、设备折旧（总投资按24个月摊销）与杂费约300元/月。本测算为示例模型，不构成收益承诺；实际收益受选址、天气、季节、经营投入影响，可能低于测算甚至亏损。1—2人经营的人工未计入现金成本，请计入你的机会成本。</p>
       </div>
     </div>
+    <div class="warm reveal">
+      <h3>写给还在犹豫的你</h3>
+      <p>我们不敢承诺「稳赚」——敢这么承诺的品牌，反而要警惕。我们能做到的是：方案先在自家直营摊验证、进货价低于散户、开业有人驻点带、经营不好督导比你更急。就算最坏情况不想做了，保证金按合同退、设备有人回收，亏有限、退有路。把保守情景的账算得过来，再决定加入；算不过来，我们会劝你先别做。这份坦诚，就是我们对「你一定能有收益」最大的诚意。</p>
+    </div>
   </div>
 </section>
 
@@ -507,7 +522,7 @@ footer p{margin:0;max-width:900px}
     <div class="sec-head reveal">
       <span class="kicker">TRUST · 为什么值得信</span>
       <h2>不喊「保赚」，用机制让你敢跟</h2>
-      <p>信任不来自口号，来自可核验的事实与写进合同的保障。</p>
+      <p>信任不来自口号，来自可核验的事实与写进合同的保障。你只管把摊摆好，剩下的交给体系。</p>
     </div>
     <div class="trust-grid">
       <figure class="trust-photo reveal" style="margin:0">
@@ -616,6 +631,7 @@ footer p{margin:0;max-width:900px}
           <li>先看信息披露文件，再谈签约</li>
           <li>可预约参观官方直营样板摊</li>
           <li>咨询免费，不收取任何前期费用</li>
+          <li>从第一通电话到第一笔收入，全程有人陪跑</li>
         </ul>
       </div>
       <form class="form reveal" id="leadForm" novalidate>
@@ -642,6 +658,13 @@ footer p{margin:0;max-width:900px}
     </div>
   </div>
 </section>
+
+<!-- SECTION: floatcta -->
+<a class="fab" href="#contact">💬 免费咨询</a>
+<div class="mbar">
+  <a class="ghost" href="#knowledge">学开摊知识</a>
+  <a class="gold" href="#contact">免费领方案</a>
+</div>
 
 <!-- SECTION: footer -->
 <footer>
