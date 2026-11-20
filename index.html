@@ -203,6 +203,30 @@ footer p{margin:0;max-width:900px}
 .dim-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .formula{background:var(--ink);color:#fff;border-radius:14px;padding:20px 24px;margin-top:20px;font-size:clamp(15px,2.2vw,19px);text-align:center}
 .formula b{color:var(--gold2)}
+/* SECTION: knowledge */
+.kfilter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.kchip{min-height:44px;padding:8px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;cursor:pointer;color:var(--muted)}
+.kchip.on{background:var(--ink);color:#e3b566;border-color:var(--ink);font-weight:700}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.kcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.kcard .tag{margin-bottom:10px}
+.kcard h3{font-size:16px;color:var(--ink);margin-bottom:6px}
+.kcard p{margin:0;font-size:13.5px;color:var(--muted)}
+.qa-box{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.qa-box h3{font-size:17px;color:var(--ink);margin-bottom:12px}
+.qa-box details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.qa-box summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px}
+.qa-box summary::-webkit-details-marker{display:none}
+.qa-box summary::after{content:"+";color:var(--gold);font-size:20px;flex:0 0 auto}
+.qa-box details[open] summary::after{content:"−"}
+.qa-box .ans{padding:0 18px 14px;font-size:13.5px;color:var(--muted)}
+.ask{margin-top:22px;border-top:1px dashed var(--line);padding-top:20px}
+.ask textarea{width:100%;min-height:90px;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;resize:vertical;background:#fff;color:var(--text)}
+.ask input{width:100%;min-height:46px;font-size:16px;margin-top:10px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text)}
+.ask .btn{margin-top:12px}
+.ask-item{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}
+.ask-item p{margin:0 0 4px;font-size:14px;color:var(--text)}
+.ask-item span{font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -220,6 +244,7 @@ footer p{margin:0;max-width:900px}
       <a href="#system">加盟体系</a>
       <a href="#steps">怎么开摊</a>
       <a href="#training">训练营</a>
+      <a href="#knowledge">开摊知识</a>
       <a href="#calc">收益测算</a>
       <a href="#pricing">加盟方案</a>
       <a href="#faq">常见问题</a>
@@ -374,6 +399,63 @@ footer p{margin:0;max-width:900px}
     </div>
     <div class="dim-chips reveal"><span class="tag">选品四维打分：真实需求</span><span class="tag">利润空间</span><span class="tag">落地难度</span><span class="tag">复购潜力</span></div>
     <div class="formula reveal">每日最低出单量 = <b>点位每日固定成本 ÷ 单份产品利润</b> —— 这就是你给自己的每日保本KPI</div>
+  </div>
+</section>
+
+<!-- SECTION: knowledge -->
+<section class="sec" id="knowledge">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">KNOWLEDGE · 开摊知识</span>
+      <h2>开摊小知识：总部把两天训练营的干货先给你</h2>
+      <p>来自官方训练营课程方法论，加盟前就能用。点分类筛选，看完还有问题，直接在下面提问。</p>
+    </div>
+    <div class="kfilter reveal" id="kFilter">
+      <button class="kchip on" data-cat="all">全部</button>
+      <button class="kchip" data-cat="选品">选品</button>
+      <button class="kchip" data-cat="调研">调研</button>
+      <button class="kchip" data-cat="算账">算账</button>
+      <button class="kchip" data-cat="货源">货源</button>
+      <button class="kchip" data-cat="运营">运营</button>
+      <button class="kchip" data-cat="合规">合规</button>
+    </div>
+    <div class="kgrid" id="kGrid">
+      <div class="kcard reveal" data-cat="选品"><span class="tag">选品</span><h3>咸香辣复购赢甜品</h3><p>鲜香辣受众远大于甜，高油高糖高盐是基因难拒绝的元素；甜品要做就得有特色、控成本、抓颜值。</p></div>
+      <div class="kcard reveal" data-cat="选品"><span class="tag">选品</span><h3>优先「复购×毛利」黄金区</h3><p>钵钵鸡、辣土豆、鸭货、烤冷面、关东煮这类爱吃又有利润的品类优先；避开复购低毛利低的双低区。</p></div>
+      <div class="kcard reveal" data-cat="选品"><span class="tag">选品</span><h3>80%—90%工序在家预制</h3><p>摊位上动作越少越好：提前穿串调汁备料，现场只炸拌装，出餐快、损耗低、新手不慌。</p></div>
+      <div class="kcard reveal" data-cat="调研"><span class="tag">调研</span><h3>盯摊至少连看3天</h3><p>工作日、周末、节假日各蹲一个全天，看出单节奏和高峰真实单量——没做过盯摊拆摊，是多数人没回本的原因。</p></div>
+      <div class="kcard reveal" data-cat="调研"><span class="tag">调研</span><h3>算同行的时薪</h3><p>拆设备、进货、损耗成本加时间算时薪；如果一小时只挣二三十，不如打工，别进低收益项目。</p></div>
+      <div class="kcard reveal" data-cat="算账"><span class="tag">算账</span><h3>给自己定每日保本KPI</h3><p>每日最低出单量＝点位每日固定成本÷单份产品利润；没摊位费就把自己的时间机会成本算进去。</p></div>
+      <div class="kcard reveal" data-cat="算账"><span class="tag">算账</span><h3>流水不等于利润</h3><p>头部案例不能当平均：周末日流水几千是标杆不是常态；用毛利率倒推每月要卖多少份，再判断压力承受力。</p></div>
+      <div class="kcard reveal" data-cat="货源"><span class="tag">货源</span><h3>1688认「牛头/超级工厂」</h3><p>才是真厂家；货比三家、看差评、问补货条件和最低进货量，别被低价二道贩子坑。</p></div>
+      <div class="kcard reveal" data-cat="货源"><span class="tag">货源</span><h3>首单只进3—5天的量</h3><p>小批量测试、精致陈列不铺满；大方谈「卖不掉可退换」，这是行业惯例，能谈就谈。</p></div>
+      <div class="kcard reveal" data-cat="运营"><span class="tag">运营</span><h3>产品分三层</h3><p>引流款便宜勾人、利润款真正赚钱、形象款锚定撑场面；搭配必须面向同一客群，如小丸子引流＋关东煮赚钱。</p></div>
+      <div class="kcard reveal" data-cat="运营"><span class="tag">运营</span><h3>排队是资源</h3><p>人少做慢一点维持排队、人多越快越好；高峰先收钱再出餐、按订单顺序做，不欺软怕硬。</p></div>
+      <div class="kcard reveal" data-cat="运营"><span class="tag">运营</span><h3>每天只改一个动作</h3><p>收摊做销量/剩货/利润三复盘，问回头客反馈；一次改一个变量，有效留下、无效撤回。</p></div>
+      <div class="kcard reveal" data-cat="运营"><span class="tag">运营</span><h3>卫生和服务是记忆点</h3><p>手套口罩帽子、摊位最干净，再加点情绪价值——多数爆火摊主靠服务差异化，不只靠产品。</p></div>
+      <div class="kcard reveal" data-cat="合规"><span class="tag">合规</span><h3>先定点位再办证</h3><p>食品类＝健康证＋食品摊贩登记卡，多数免费、总共百来元；上外卖、进商场、开发票才需个体执照。</p></div>
+      <div class="kcard reveal" data-cat="合规"><span class="tag">合规</span><h3>这些位置不能摆</h3><p>主干道两侧、地铁口50米内、部分学校医院周边200米内禁摆；出摊前问清城管科或社区居委会。</p></div>
+      <div class="kcard reveal" data-cat="合规"><span class="tag">合规</span><h3>冷食先查当地禁售目录</h3><p>凉拌菜、卤味、冷盘、生腌、刺身在多地禁止摊贩售卖；新手优先炸串、煎饼、热饮等热食品类。</p></div>
+      <div class="kcard reveal" data-cat="合规"><span class="tag">合规</span><h3>遇执法不冲突</h3><p>全程录像、扣押要清单；乱收费或暴力执法拨12345，60天内可申请行政复议；凭证资质都留好。</p></div>
+      <div class="kcard reveal" data-cat="合规"><span class="tag">合规</span><h3>凡让你先交钱的，默认骗局</h3><p>快招加盟、手工外放、高入场费集市都要警惕；正规体系先看披露文件和直营样板，再谈签约。</p></div>
+    </div>
+    <div class="qa-box reveal">
+      <h3>常见问答</h3>
+      <details><summary>完全没经验，第一天该干什么？</summary><div class="ans">先别进货。用四周调研法：第1周全域扫街找信息差，第2周筛2—3个点位高峰蹲点，第4周低价试摆验证「停留—询问—成交」，连续一周无人问就止损换方向。</div></details>
+      <details><summary>启动资金只有1000元能摆吗？</summary><div class="ans">能试水：二手小推车＋小批量货＋精致陈列即可起步（课程口径的极简试摆）。但要把设备折旧、损耗和自己的时间算进账，按保本KPI每天核对。</div></details>
+      <details><summary>怎么判断一个品类值不值得做？</summary><div class="ans">四维打分：真实需求、利润空间、落地难度、复购潜力；再放进「复购×毛利」象限，优先黄金区。自己不爱吃、周围人不认可的口味，别出摊。</div></details>
+      <details><summary>卖吃的要办什么证？贵吗？</summary><div class="ans">健康证（一人一证、有效期1年）＋食品摊贩登记卡，多数地区免费或几十元，总成本百来元。先确定点位再办证，各地要求不同，问街道办或城管科。</div></details>
+      <details><summary>总部会教这些吗？</summary><div class="ans">会。三天训练营DAY1认知调研、DAY2全流程实操、DAY3流量扩容，全部在官方直营点实操考核；这些知识卡就是课程方法论的预览版。</div></details>
+      <div class="ask">
+        <h3>还有问题？直接问</h3>
+        <textarea id="askQ" placeholder="写下你的开摊问题，如：我们县城夜市摊位费300/月，卖烤肠能回本吗？"></textarea>
+        <input id="askC" type="text" placeholder="怎么称呼你（选填）">
+        <button class="btn btn-gold" id="askBtn" type="button">提交问题</button>
+        <div class="form-msg" id="askMsg" role="status"></div>
+        <p class="note" style="margin-top:10px">演示说明：当前问题仅保存在你的浏览器本地；正式上线接入后端后，加盟顾问会逐条回复。</p>
+        <div id="askList"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -627,6 +709,53 @@ navLinks.querySelectorAll('a').forEach(function(a){
   [rSales,rMargin,rRent,rDays].forEach(function(el){ el.addEventListener('input',calc); });
   sInvest.addEventListener('change',calc);
   calc();
+})();
+/* SECTION: knowledge */
+(function(){
+  var filter=document.getElementById('kFilter');
+  var cards=document.querySelectorAll('#kGrid .kcard');
+  if(filter){
+    filter.addEventListener('click',function(ev){
+      var btn=ev.target.closest('.kchip'); if(!btn){return;}
+      filter.querySelectorAll('.kchip').forEach(function(c){c.classList.remove('on');});
+      btn.classList.add('on');
+      var cat=btn.dataset.cat;
+      cards.forEach(function(card){
+        var show=(cat==='all'||card.dataset.cat===cat);
+        card.style.display=show?'':'none';
+        if(show){card.classList.add('in');}
+      });
+    });
+  }
+  var KEY='tankebang_questions';
+  var qEl=document.getElementById('askQ'), cEl=document.getElementById('askC'),
+      btn=document.getElementById('askBtn'), msg=document.getElementById('askMsg'),
+      list=document.getElementById('askList');
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ return []; } }
+  function render(){
+    if(!list){return;}
+    list.textContent='';
+    load().slice(-5).reverse().forEach(function(item){
+      var box=document.createElement('div'); box.className='ask-item';
+      var p=document.createElement('p'); p.textContent=item.q;
+      var s=document.createElement('span'); s.textContent=(item.name?item.name+' · ':'')+item.at+' · 待顾问回复（演示）';
+      box.appendChild(p); box.appendChild(s); list.appendChild(box);
+    });
+  }
+  if(btn){
+    btn.addEventListener('click',function(){
+      var q=qEl.value.trim();
+      msg.className='form-msg';
+      if(q.length<5){ msg.classList.add('err'); msg.textContent='问题再写具体一点（至少5个字），方便顾问准确回答。'; return; }
+      var arr=load();
+      arr.push({q:q,name:cEl.value.trim(),at:new Date().toLocaleString('zh-CN')});
+      try{ localStorage.setItem(KEY,JSON.stringify(arr)); }catch(e){}
+      msg.classList.add('ok'); msg.textContent='已收到（演示版仅保存在本机）。正式上线后顾问会逐条回复；着急可走下方预约通道，1个工作日内回电。';
+      qEl.value=''; cEl.value='';
+      render();
+    });
+  }
+  render();
 })();
 /* SECTION: form */
 (function(){
